@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwindcss With Vite</title>
+    <link rel="stylesheet" href="./css/tailwind.css" />
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+  </head>
+  <body>
+   <nav class="lg:h-[470px] h-[152px] bg-primary"  style="background-image: url('./dist/assets/background/background1.svg'); background-repeat: no-repeat; background-position: right;">
+      <div class="container mx-auto relative">
+        <div class="flex justify-between items-center">
+          <div>
+            <a href="#">
+              <img src="./dist/assets/logo/logo-white.svg" class="h-[54px] w-[111px]" alt="">
+            </a>
+          </div>
+          <div>
+            <button class="btn btn-sm btn-outline text-white border-gray-200 hover:bg-white hover:text-black ">loading</button> 
+          </div>
+        </div>
+
+        <div class="flex flex-col py-40 absolute w-full lg:top-44">
+          <div class="flex justify-between">
+            <div>
+              <h2 class="font-inter text-[24px] text-white">Bus Ticket</h2>
+              <p class="text-p_color">Bus tickting made easy</p>
+            </div>
+            <div>
+              <button class="btn btn-sm btn-outline text-primary bg-white hover:bg-primary hover:text-white ">Ticket History</button> 
+  
+            </div>
+          </div>
+          <div class="bg-[#F7F7F7] rounded-md py-10" >
+            <div class="lg:grid lg:grid-cols-5 gap-3">
+              <div>
+                <div class="flex justify-center">
+                  <div x-data="{ dropdownOpen: true }" class="relative">
+                    <button @click="dropdownOpen = !dropdownOpen" class="relative z-10 block rounded-md bg-white p-2 focus:outline-none">
+                    <div class="flex gap-6">
+                      <div class="rounded-xl bg-opacity-[0.12] p-5">
+
+                        <img src="./dist/assets/icon/Vector (1).png" class="h-[40px] w-[40px] bg-[#33DDF0]" alt="">
+                      </div>
+                      <div>
+                        <p>From</p>
+                        <p class="font-bold">choose your location</p>
+                      </div>
+                    </div>
+                    </button>
+                  
+                    <div x-show="dropdownOpen" @click="dropdownOpen = false" class="fixed inset-0 h-full w-full z-10"></div>
+                  
+                    <div x-show="dropdownOpen" class="absolute right-0 mt-2 py-2 overflow-y-auto h-52 w-60 bg-white divide-y-2 rounded-md shadow-xl z-20">
+                      <div class="flex justify-center items-center">
+                        <input type="text" placeholder="Search your location" class="border border-black text-gray-500 px-4 rounded-sm py-2">
+                      </div>
+
+                      <div class="flex justify-center items-center">
+                        <p class="text-black">saiem</p>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+              </div>
+
+
+
+
+            
+            </div>
+          </div>
+        </div>
+      </div>
+   </nav>
+  </body>
+</html>
