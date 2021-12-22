@@ -7,73 +7,308 @@
     <title>Tailwindcss With Vite</title>
     <link rel="stylesheet" href="./css/tailwind.css" />
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+  
   </head>
   <body>
-   <nav class="lg:h-[470px] h-[152px] bg-primary"  style="background-image: url('./dist/assets/background/background1.svg'); background-repeat: no-repeat; background-position: right;">
+   <nav class="lg:h-[470px] lg:w-full h-[152px] bg-primary"  style="background-image: url('./dist/assets/background/background1.svg'); background-repeat: no-repeat; background-position: right; background-size: 40% 100%;">
       <div class="container mx-auto relative">
-        <div class="flex justify-between items-center">
+        <div class="flex justify-between items-center p-3">
           <div>
             <a href="#">
               <img src="./dist/assets/logo/logo-white.svg" class="h-[54px] w-[111px]" alt="">
             </a>
           </div>
           <div>
-            <button class="btn btn-sm btn-outline text-white border-gray-200 hover:bg-white hover:text-black ">loading</button> 
+            <button class="btn btn-sm btn-outline text-white border-gray-200 hover:bg-white hover:text-black rounded-full hover:border-white lg:px-8">Sign in</button> 
           </div>
         </div>
 
-        <div class="flex flex-col py-40 absolute w-full lg:top-44">
-          <div class="flex justify-between">
-            <div>
-              <h2 class="font-inter text-[24px] text-white">Bus Ticket</h2>
-              <p class="text-p_color">Bus tickting made easy</p>
+        <div class="flex flex-col pt-40  absolute w-full top-20 lg:top-36">
+          <div class="flex justify-between items-center translate-y-[-170px] lg:translate-y-[0]">
+            <div class="p-6">
+              <h2 class="font-inter text-[12px] lg:text-[24px] text-white">Bus Ticket</h2>
+              <p class="text-p_color text-[12px] lg:text-md">Bus tickting made easy</p>
             </div>
-            <div>
-              <button class="btn btn-sm btn-outline text-primary bg-white hover:bg-primary hover:text-white ">Ticket History</button> 
+            <div class="p-6">
+              <button class="btn btn-sm btn-outline text-primary rounded-full bg-white hover:bg-primary hover:text-white ">Ticket History</button> 
   
             </div>
           </div>
-          <div class="bg-[#F7F7F7] rounded-md py-10" >
-            <div class="lg:grid lg:grid-cols-5 gap-3">
-              <div>
-                <div class="flex justify-center">
-                  <div x-data="{ dropdownOpen: true }" class="relative">
-                    <button @click="dropdownOpen = !dropdownOpen" class="relative z-10 block rounded-md bg-white p-2 focus:outline-none">
-                    <div class="flex gap-6">
-                      <div class="rounded-xl bg-opacity-[0.12] p-5">
+                <div class="bg-[#F7F7F7] rounded-md  py-10 translate-y-[-168px] lg:translate-y-[-0]" >
+                      <div class="lg:grid lg:grid-cols-5 gap-3">
+                        <div>
+                          <div class="flex justify-center">
+                            <div x-data="{ dropdownOpen1: true }" class="relative">
+                              <button @click="dropdownOpen1 = !dropdownOpen1" class="relative z-10 block lg:w-[180px] w-[250px] xl:w-[242px] rounded-lg bg-white p-2 focus:outline-none">
+                              <div class="flex gap-1 xl:gap-x-3 pr-6">
+                                <div class="flex justify-center items-center">
 
-                        <img src="./dist/assets/icon/Vector (1).png" class="h-[40px] w-[40px] bg-[#33DDF0]" alt="">
+                                  <div class="rounded-xl bg-opacity-[0.12] bg-[#33DDF0] lg:h-[30px] xl:h-[40px] lg:w-[30px] xl:w-[40px] h-[40px] w-[40px] flex items-center justify-center">
+            
+                                    <img src="./dist/assets/icon/Vector (1).png" class="w-4 lg:w-2 xl:w-4" alt="">
+                                  </div>
+                                  
+                                </div>
+                                <div class="">
+                                  <p class="font-inter flex items-start lg:text-sm xl:text-md text-md">From</p>
+                                  <p class="font-inter font-[500] lg:text-sm xl:text-md text-md">choose location</p>
+                                </div>
+                              </div>
+                              </button>
+                            
+                              <!-- <div x-show="dropdownOpen1" @click="dropdownOpen1 = false" class="fixed inset-0 h-full w-full z-10"></div> -->
+                            
+                              <div x-show="!dropdownOpen1" class="absolute lg:right-[-62px] xl:right-0 mt-2 py-2 overflow-y-auto leading-6 h-80 w-64 bg-white divide-y-2 rounded-md shadow-xl z-20 before:block before:-mt-5 before:ml-20 before:-skew-y-3 before:bg-white before:h-5 before:w-5 before:rotate-45">
+                                <div class="flex justify-center items-center p-4">
+                                  <h2 class="font-inter text-sm xl:text-md font-[600]">Select Your Location</h2>
+                                </div>
+
+                                <div class="flex justify-center items-center p-2">
+                                  <input type="text" class="border border-gray-300 px-6 py-2 rounded-md outline-none" placeholder="Search Location">
+                                </div>
+
+                                <div class="flex justify-start items-start p-2 text-sm xl:text-md">
+                                <li class="list-none cursor-pointer font-inter font-[400] hover:text-primary">Dhaka</li>
+                                </div>
+                                <div class="flex justify-start items-start p-2 text-sm xl:text-md">
+                                  <li class="list-none cursor-pointer font-inter font-[400] hover:text-primary">Chittagong</li>
+                                </div>
+                                <div class="flex justify-start items-start p-2 text-sm xl:text-md">
+                                  <li class="list-none cursor-pointer font-inter font-[400] hover:text-primary">Cumilla</li>
+                                </div>
+                                <div class="flex justify-start items-start p-2 text-sm xl:text-md">
+                                  <li class="list-none cursor-pointer font-inter font-[400] hover:text-primary">Sylhet</li>
+                                </div>
+                                <div class="flex justify-start items-start p-2 text-sm xl:text-md">
+                                  <li class="list-none cursor-pointer font-inter font-[400] hover:text-primary">jessore</li>
+                                </div>
+                                <div class="flex justify-start items-start p-2 text-sm xl:text-md">
+                                  <li class="list-none cursor-pointer font-inter font-[400] hover:text-primary">Teknaf</li>
+                                </div>
+                              </div>
+                            </div>
+                            </div>
+                        </div>
+
+
+
+                      <!-- second -->
+                      <div class="mt-5 lg:mt-0">
+                        <div class="flex justify-center">
+                          <div x-data="{ dropdownOpen2: true }" class="relative">
+                            <button @click="dropdownOpen2 = !dropdownOpen2" class="relative z-10 block lg:w-[200px] w-[250px] xl:w-[242px] rounded-lg bg-white p-2 focus:outline-none">
+                            <div class="flex gap-1 xl:gap-x-3 pr-6">
+                              <div class="flex justify-center items-center">
+
+                                <div class="rounded-xl bg-opacity-[0.12] bg-[#f04935] h-[40px] w-[40px] flex items-center justify-center">
+          
+                                  <img src="./dist/assets/icon/Vector (2).png" class="w-4" alt="">
+                                </div>
+                                
+                              </div>
+                              <div class="">
+                                <p class="font-inter flex items-start text-sm xl:text-md">To</p>
+                                <p class="font-inter font-[500] text-sm xl:text-md">choose location</p>
+                              </div>
+                            </div>
+                            </button>
+                          
+                            <!-- <div x-show="dropdownOpen2" @click="dropdownOpen2 = false" class="fixed inset-0 h-full w-full z-10"></div> -->
+                          
+                            <div x-show="!dropdownOpen2" class="absolute right-0 mt-2 py-2 overflow-y-auto leading-6 h-80 w-64 bg-white divide-y-2 rounded-md shadow-xl z-20">
+                              <div class="flex justify-center items-center p-4">
+                                <h2 class="font-inter text-sm xl:text-md font-[600]">Select Your Location</h2>
+                              </div>
+
+                              <div class="flex justify-center items-center p-2">
+                                <input type="text" class="border border-gray-300 px-6 py-2 rounded-md outline-none" placeholder="Search Location">
+                              </div>
+
+                              <div class="flex justify-start items-start p-2 text-sm xl:text-md">
+                              <li class="list-none cursor-pointer font-inter font-[400] hover:text-primary">Dhaka</li>
+                              </div>
+                              <div class="flex justify-start items-start p-2 text-sm xl:text-md">
+                                <li class="list-none cursor-pointer font-inter font-[400] hover:text-primary">Chittagong</li>
+                              </div>
+                              <div class="flex justify-start items-start p-2 text-sm xl:text-md">
+                                <li class="list-none cursor-pointer font-inter font-[400] hover:text-primary">Cumilla</li>
+                              </div>
+                              <div class="flex justify-start items-start p-2 text-sm xl:text-md">
+                                <li class="list-none cursor-pointer font-inter font-[400] hover:text-primary">Sylhet</li>
+                              </div>
+                              <div class="flex justify-start items-start p-2 text-sm xl:text-md">
+                                <li class="list-none cursor-pointer font-inter font-[400] hover:text-primary">jessore</li>
+                              </div>
+                              <div class="flex justify-start items-start p-2 text-sm xl:text-md">
+                                <li class="list-none cursor-pointer font-inter font-[400] hover:text-primary">Teknaf</li>
+                              </div>
+                            </div>
+                          </div>
+                          </div>
                       </div>
-                      <div>
-                        <p>From</p>
-                        <p class="font-bold">choose your location</p>
-                      </div>
+                    <!-- 3rd -->
+                    <div class="mt-5 lg:mt-0">
+                      <div class="flex justify-center">
+                        <div x-data="{ dropdownOpen3: true }" class="relative">
+                          <button @click="dropdownOpen3 = !dropdownOpen3" class="relative z-10 block rounded-lg lg:w-[200px] w-[250px] xl:w-[242px]  bg-white p-2 focus:outline-none">
+                          <div class="flex gap-1 xl:gap-x-3">
+                            <div class="flex justify-center items-center">
+
+                              <div class="rounded-xl bg-opacity-[0.12] bg-[#4633F0] h-[40px] w-[40px] flex items-center justify-center">
+
+                                <img src="./dist/assets/icon/Vector (3).png" class="w-4" alt="">
+                              </div>
+                              
+                            </div>
+                            <div class="">
+                              <p class="font-inter flex items-start text-sm xl:text-md">Bus Type</p>
+                              <p class="font-inter font-[500] text-sm xl:text-md">choose bus type</p>
+                            </div>
+                          </div>
+                          </button>
+                        
+                          <!-- <div x-show="dropdownOpen3" @click="dropdownOpen3 = false" class="fixed inset-0 h-full w-full z-50"></div> -->
+                        
+                          <div x-show="!dropdownOpen3" class="absolute right-0 mt-2 py-2 overflow-y-auto leading-6 z-50 h-52 w-64 bg-white divide-y-2 rounded-md shadow-xl">
+                            <div class="flex justify-center items-center p-4">
+                              <h2 class="font-inter text-sm xl:text-md font-[600]">Select bus type</h2>
+                            </div>
+                            <div class="flex justify-start items-start p-2 text-sm xl:text-md">
+                            <li class="list-none cursor-pointer font-inter font-[400] hover:text-primary">Ac</li>
+                            </div>
+                            <div class="flex justify-start items-start p-2 text-sm xl:text-md">
+                              <li class="list-none cursor-pointer font-inter font-[400] hover:text-primary">Non-Ac</li>
+                            </div>
+                            <div class="flex justify-start items-start p-2 text-sm xl:text-md">
+                              <li class="list-none cursor-pointer font-inter font-[400] hover:text-primary">Any</li>
+                            </div>
+                            
+                          </div>
+                        </div>
+                        </div>
                     </div>
-                    </button>
-                  
-                    <div x-show="dropdownOpen" @click="dropdownOpen = false" class="fixed inset-0 h-full w-full z-10"></div>
-                  
-                    <div x-show="dropdownOpen" class="absolute right-0 mt-2 py-2 overflow-y-auto h-52 w-60 bg-white divide-y-2 rounded-md shadow-xl z-20">
-                      <div class="flex justify-center items-center">
-                        <input type="text" placeholder="Search your location" class="border border-black text-gray-500 px-4 rounded-sm py-2">
-                      </div>
 
-                      <div class="flex justify-center items-center">
-                        <p class="text-black">saiem</p>
-                      </div>
-                    </div>
-                  </div>
-                  </div>
-              </div>
+                            <!-- 4th -->
+                            <div class="mt-5 lg:mt-0">
+                              <div class="flex justify-center">
+                                <div x-data="{ dropdownOpen4: true }" class="relative">
+                                  <button @click="dropdownOpen4 = !dropdownOpen4" class="relative z-10 block rounded-lg lg:w-[200px] w-[250px] xl:w-[242px] bg-white p-2 focus:outline-none">
+                                  <div class="flex gap-1 xl:gap-x-3">
+                                    <div class="flex justify-center items-center">
 
+                                      <div class="rounded-xl bg-opacity-[0.12] bg-[#33DDF0] h-[40px] w-[40px] flex items-center justify-center">
+                                      
+                                        <img src="./dist/assets/icon/Vector (4).png" class="w-4" alt=""> 
+                                      </div>
+                                      
+                                    </div>
+                                    <div class="">
+                                      <p class="font-inter flex items-start text-sm xl:text-md">Date</p>
+                                      <p class="font-inter font-[500] text-sm xl:text-md">Select Date</p>
+                                    </div>
+                                  </div>
+                                  </button>
+                                
+                                  <!-- <div x-show="dropdownOpen4" @click="dropdownOpen4 = false" class="fixed inset-0 h-full w-full z-10"></div> -->
+                                
+                                  <div x-show="!dropdownOpen4" class="absolute right-0 mt-5 overflow-y-auto leading-6 h-52 w-64 bg-white divide-y-2 rounded-md shadow-xl z-20 before:block before:-mt-2 before:ml-20 before:-skew-y-3 before:bg-white before:h-5 before:w-5 before:rotate-45 ">
+                                    
+                                    <div class="flex justify-center items-center p-4">
+                                      <h2 class="font-inter text-sm xl:text-md font-[600]">Select journey date</h2>
+                                    </div>
 
+                                
+                                    
+                                  </div>
+                                </div>
+                                </div>
+                            </div>
+                            <!-- 5th -->
+                            <div class="mt-5 lg:mt-0">
+                                  <div class="flex justify-center">
+                                          <div x-data="{ dropdownOpen5: true }" class="relative">
+                                            <button @click="dropdownOpen5 = !dropdownOpen5" class="relative z-10 block rounded-lg lg:w-[180px] w-[250px] xl:w-[242px] bg-white p-2 focus:outline-none">
+                                            <div class="flex gap-x-3 pr-6">
+                                              <div class="flex justify-center items-center">
 
+                                                <div class="rounded-xl bg-opacity-[0.12] bg-[#f04935] h-[40px] w-[40px] flex items-center justify-center">
 
+                                                  <img src="./dist/assets/icon/Vector (5).png" class="w-4" alt="">
+                                                </div>
+                                                
+                                              </div>
+                                              <div class="">
+                                                <p class="font-inter flex items-start text-sm xl:text-md">Passenger</p>
+                                                <p class="font-inter font-[500] text-sm xl:text-md">No of people</p>
+                                              </div>
+                                            </div>
+                                            </button>
+                                          
+                                            <!-- <div x-show="dropdownOpen5" @click="dropdownOpen5 = false" class="fixed inset-0 h-full w-full z-10"></div> -->
+                                          
+                                            <div x-show="!dropdownOpen5" class="mt-5 h-52 w-64 bg-white rounded-md shadow-xl z-20 leading-6 before:block before:-mt-2 before:ml-20 before:-skew-y-3 before:bg-white before:h-5 before:w-5 before:rotate-45 absolute">
+                                          
+                                              <div class="flex justify-center items-center p-4 border-b border-gray-200">
+                                                <h2 class="font-inter text-sm xl:text-md font-[600]">How many seats needed</h2>
+                                              </div>
+
+                                              <div class="flex justify-center items-center p-2">
+                                                <input type="text" class="border border-gray-300 px-6 py-2 rounded-md outline-none" placeholder="Search Location">
+                                              </div>
+                                              <div class="flex items-center justify-center lg:mt-4">
+                                                <button class="btn bg-primary border border-primary hover:bg-white hover:text-primary hover:border-primary btn-sm w-11/12 py-2 rounded-full text-sm">search ticket</button> 
+                                              </div>
+                                              
+                                            </div>
+                                                <div class="lg:hidden flex justify-center items-center mt-5">
+                                                  <a href="#" class="btn bg-primary border border-primary hover:bg-white hover:text-primary  hover:border-primary btn-sm lg:btn-md w-2/4 lg:w-1/4 rounded-full">
+
+                                                    Search Ticket
+                                                  </a>
+                                                </div>
+                                            
+                                      </div>
+
+                                    
+                              </div>
+                            </div>
             
             </div>
           </div>
+          <div class="flex items-center justify-center w-full ">
+            <a href="#" class="btn bg-primary border border-primary hover:bg-white hover:text-primary  hover:border-primary btn-sm lg:btn-md w-2/4 lg:w-1/4  rounded-full">
+
+              Search Ticket
+            </a>
+            
+          </div>
+          <div class="lg:grid lg:grid-cols-2 gap-4 -mt-28 lg:mt-40">
+            <div class="bg-secondary_clr p-4 rounded-xl">
+              <div class="w-12 h-12 lg:w-16 lg:h-16 rounded-full bg-green_icon bg-opacity-20 flex items-center justify-center">
+                    <img src="./dist/assets/icon/Vector (6).png" class="w-8" alt="">
+              </div>
+              <div>
+                <h2 class="font-inter font-bold text-lg mt-5">Gaurenteed seats</h2>
+                <p class="text-paragraph_color text-sm">Book guranteed seats in real time from bus operators. Input your destination and date, search ticket browse through options and select one perfect for you.</p>
+              </div>
+            </div>
+
+            <div class="bg-secondary_clr p-4 rounded-xl mt-5 lg:mt-0">
+              <div class="w-12 h-12 lg:w-16 lg:h-16 rounded-full bg-blue_icon bg-opacity-20 flex items-center justify-center">
+                    <img src="./dist/assets/icon/Vector (7).png" class="w-8" alt="">
+              </div>
+              <div>
+                <h2 class="font-inter font-bold text-lg mt-5">Book through agent</h2>
+                <p class="text-paragraph_color text-sm">Your ticket request will be forwarded to our ticketing agent first, if ticket is available the we will confirm your ticket according to your request. Plus any other info for user to make the process understand easier.</p>
+              </div>
+            </div>
+         </div>
         </div>
+        
       </div>
+      
    </nav>
+
+  
   </body>
 </html>
